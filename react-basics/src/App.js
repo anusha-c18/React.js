@@ -3,7 +3,7 @@ import ExpenseItem from './components/ExpenseItem';
 
 function App() {
   return (
-    <div>
+    <div >
       <h2>hi</h2>
       <p>This is also visible</p>
       <ExpenseItem></ExpenseItem>
