@@ -1,17 +1,14 @@
 import "./ExpenseItem.css";
 import React from "react";
 
-function ExpenseItem() {
-  const expenseDate = new Date(2021, 2, 28);
-  const expenseTitle = "car insurance";
-  const expenseAmount = 9293;
+function ExpenseItem(props) {
   return (
     // one root element only
     <div className="container">
-      <p>{expenseDate.toString()}</p>
-      <p>{expenseTitle}</p>
+      <p>{props.date.toString()}</p>
+      <p>{props.title}</p>
       <div className="amount">
-        <p>{expenseAmount * 2}</p>
+        <p>{props.amount}</p>
       </div>
     </div>
   );
