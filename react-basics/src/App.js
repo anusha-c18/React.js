@@ -1,7 +1,6 @@
 import "./App.css";
-import ExpenseItem from "./components/ExpenseItem";
-import Expenses from "./components/Expenses";
-
+import Expenses from "./components/Expenses/Expenses";
+import React from "react";
 function App() {
   const expenses = [
     {
@@ -25,7 +24,12 @@ function App() {
     },
   ];
   //array of objects
-
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement("h2", {}, ""),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
   return (
     <div>
       <Expenses items={expenses}></Expenses>
