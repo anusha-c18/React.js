@@ -24,8 +24,19 @@ function ExpenseForm() {
     setEnteredDate(event.target.value);
   };
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+    //creating a response object
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate), //this function will parse the date string and create a new date object
+    };
+    console.log(expenseData);
+  };
+
   return (
-    <form action="">
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
