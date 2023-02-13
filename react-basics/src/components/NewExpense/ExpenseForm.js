@@ -1,7 +1,7 @@
 import "./ExpenseForm.css";
 import React, { useState } from "react";
 
-function ExpenseForm() {
+function ExpenseForm(props) {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState(0);
   const [enteredDate, setEnteredDate] = useState("2001-01-01");
@@ -32,7 +32,7 @@ function ExpenseForm() {
       amount: enteredAmount,
       date: new Date(enteredDate), //this function will parse the date string and create a new date object
     };
-    console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
     setEnteredAmount("");
     setEnteredDate("");
     setEnteredTitle("");
