@@ -5,11 +5,16 @@ import Card from "../UI/Card";
 import ExpenseFilter from "./ExpenseFilter";
 
 function Expenses(props) {
-  const [enteredYear, setEnteredYear] = useState("2021");
+  const [enteredYear, setEnteredYear] = useState("");
+  const [filteredYears, setfilteredYears] = useState(props.items);
 
   const setYearFilter = (yearData) => {
-    console.log(yearData);
     setEnteredYear(yearData);
+    setfilteredYears(
+      props.items.filter((x) => {
+        return x.date.getFullYear().toString() === yearData;
+      })
+    );
   };
 
   return (
@@ -18,7 +23,7 @@ function Expenses(props) {
 
       {/* dynamically rendering content using the array of objects in app.js */}
 
-      {props.items.map((expense) => (
+      {filteredYears.map((expense) => (
         <ExpenseItem
           key={expense.id}
           title={expense.title}
