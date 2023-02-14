@@ -35,6 +35,7 @@ function App() {
   // );
   const addExpenseHandler = (expenseData) => {
     setExpenses((prevState) => {
+      console.log("new item added", [expenseData, ...prevState]);
       return [expenseData, ...prevState];
     });
     // doing this as it is dependent on previous state of data
@@ -43,7 +44,7 @@ function App() {
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses}></Expenses>
+      <Expenses items={expenses} />
     </div>
   );
 }
