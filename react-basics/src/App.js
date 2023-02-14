@@ -1,10 +1,10 @@
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
-import React from "react";
+import React, { useState } from "react";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
-  const expenses = [
+  const dummy_expenses = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -25,6 +25,7 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+  const [expenses, setExpenses] = useState(dummy_expenses);
   //array of objects
   // return React.createElement(
   //   "div",
@@ -33,7 +34,10 @@ function App() {
   //   React.createElement(Expenses, { items: expenses })
   // );
   const addExpenseHandler = (expenseData) => {
-    console.log(expenseData);
+    setExpenses((prevState) => {
+      return [expenseData, ...prevState];
+    });
+    // doing this as it is dependent on previous state of data
   };
 
   return (
