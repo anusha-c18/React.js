@@ -17,20 +17,22 @@ function Expenses(props) {
     );
   };
 
+  let expensesContent = <p>No expenses found.</p>;
+  if (filteredYears.length > 0) {
+    expensesContent = filteredYears.map((expense) => (
+      <ExpenseItem
+        key={expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
+    ));
+  }
   return (
     <Card className="expenses">
       <ExpenseFilter selected={enteredYear} onYearChange={setYearFilter} />
-
       {/* dynamically rendering content using the array of objects in app.js */}
-
-      {filteredYears.map((expense) => (
-        <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        />
-      ))}
+      {expensesContent}
     </Card>
   );
 }
