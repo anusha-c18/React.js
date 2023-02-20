@@ -24,7 +24,7 @@ function Expenses(props) {
       <ExpenseFilter selected={enteredYear} onYearChange={setYearFilter} />
       {/* dynamically rendering content using the array of objects in app.js */}
       <ExpensesChart expenses={filteredYears}></ExpensesChart>
-      <ExpensesList items={props.items} />
+      <ExpensesList items={filteredYears} />
     </Card>
   );
 }

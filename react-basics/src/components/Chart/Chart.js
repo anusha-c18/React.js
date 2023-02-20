@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Chart.css";
 import ChartBar from "./ChartBar";
 
