@@ -73,8 +73,8 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Cancel</button>
-        <button onClick={props.onChangeVisibility}>Add Expense</button>
+        <button onClick={props.onChangeVisibility}>Cancel</button>
+        <button type="submit">Add Expense</button>
       </div>
     </form>
   );

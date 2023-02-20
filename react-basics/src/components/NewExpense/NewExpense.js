@@ -27,7 +27,10 @@ const NewExpense = (props) => {
   } else {
     return (
       <div className="new-expense">
-        <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+        <ExpenseForm
+          onChangeVisibility={addNewExpenseVisiblilityHandler}
+          onSaveExpenseData={saveExpenseDataHandler}
+        />
       </div>
     );
   }
